@@ -2,8 +2,12 @@
 int main()
 {
 	FILE *fp;
-	fopen(&fp, "TextFile.txt", "r");
-	countpr(fp);
-	replace(fp);
+fp=fopen(&fp, "TextFile.txt", "r");
+char ch;
+scanf("%c", &ch);
+switch (ch)
+{
+case 0:replace(fp);
+}
 
 }

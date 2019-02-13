@@ -6,17 +6,11 @@ void replace(FILE *fp)
 	while(!feof(fp))
 	{
 		ch = fgetc(fp);
-		if (ch == '	')
+		if (ch ==\"\t")
 		{
 			ch = '\t';
 		}
 		fp++;
 	}
 	
-}
-int main()
-{
-	FILE *fp;
-	fopen_s(&fp, "TextFile1.txt", "r");
-	replace(fp);
 }
