@@ -80,14 +80,10 @@ int main()
 	{
 		if (flag == 1 )
 		{
-			cout << "not balanced";
+			
 			break;
 		}
-		if (s1.isempty())
-		{
-			cout << "balanced";
-		}
-      
+		
 		switch (str[i])
 		{
 		case '(':if (str[i] == '(')
@@ -96,27 +92,32 @@ int main()
 		case '[':if (str[i] == '[')
 			s1.push('[');
 			break;
-		case ')' || ']':
+		case ')' :
+			case ']' :
 
-		while (s1.isempty())
-			{
-				char ch = s1.peek();
-				if ((str[i] == ')'&& ch == '(') || (str[i] == ']'&& ch == '['))
+				if(!s1.isempty())
 				{
-					char x = s1.pop();
-					//break;
+					char ch = s1.peek();
+					if ((str[i] == ')'&& ch == '(') || (str[i] == ']'&& ch == '['))
+						 s1.pop();
+					else
+				
+
+						flag = 1;
+						break;
+					
 				}
 				else
-				{
-
 					flag = 1;
-					break;
-				}
-			}
+				break;
 		}
 	}
-	system("pause");
-	/*if (flag = 0 && s1.isempty())
+	
+	if (flag == 0 && s1.isempty())
 		cout << "balanced expression";
-*/}
+	else
+		cout << "not balanced";
+	
+	system("pause");
+}
 
