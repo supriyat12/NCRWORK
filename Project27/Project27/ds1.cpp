@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string.h>
 using namespace std;
 struct stack
 {
@@ -69,17 +70,53 @@ public:
 };
 int main()
 {
-	int m;
-	char str1,str2,str3,str4,str5;
-	cin >> m >> str1 >> str2 >> str3;
+	int flag = 0, m,i;
 	stack1 s1;
+	cin >> m;
 	s1.getsize(m);
-	s1.push(str1);
-	s1.push(str2);
-	s1.push(str3);
-	str4=s1.pop();
-	str5 = s1.peek();
-	s1.display();
-	system("pause");
+	char str[20];
+	cin >> str;
+	for (i = 0; i < strlen(str); i++)
+	{
+		if (flag == 1 )
+		{
+			cout << "not balanced";
+			break;
+		}
+		if (s1.isempty())
+		{
+			cout << "balanced";
+		}
+      
+		switch (str[i])
+		{
+		case '(':if (str[i] == '(')
+			s1.push('(');
+			break;
+		case '[':if (str[i] == '[')
+			s1.push('[');
+			break;
+		case ')' || ']':
 
-}
+		while (s1.isempty())
+			{
+				char ch = s1.peek();
+				if ((str[i] == ')'&& ch == '(') || (str[i] == ']'&& ch == '['))
+				{
+					char x = s1.pop();
+					//break;
+				}
+				else
+				{
+
+					flag = 1;
+					break;
+				}
+			}
+		}
+	}
+	system("pause");
+	/*if (flag = 0 && s1.isempty())
+		cout << "balanced expression";
+*/}
+
