@@ -4,7 +4,7 @@ struct stack
 {
 	int top;
 	int size;
-	int *s;
+	
 };
 struct node
 {
@@ -19,7 +19,7 @@ public:
 	stack1()
 	{
 		sta.top = -1;
-		sta.s = NULL;
+		
 		sta.size = 0;
 	}
 	void push(int ele)
@@ -48,7 +48,7 @@ public:
 	void getsize(int n)
 	{
 		sta.size = n;
-		sta.s = new int[n];
+		
 	}
 	void display()
 	{
