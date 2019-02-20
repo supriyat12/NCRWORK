@@ -72,31 +72,36 @@ public:
 		int  i;
 		for (i = 0; i < strlen(str); i++)
 		{
-			switch (str[i])
+			if (isdigit(str[i]))
 			{
-			case 0-9:
 				push(str[i]);
-				break;
-			case '*':
-			case '/':
-			case '+':
-			case '-':
-				if (!isempty())
+			}
+			else
+			{
+				switch (str[i])
 				{
-					char ch1 = pop();
-					char ch2 = pop();
-					if (str[i] == '+')
-						push(ch2 + ch1);
-					if (str[i] == '-')
-						push(ch2 - ch1);
-					if (str[i] == '*')
-						push(ch2 * ch1);
-					if (str[i] == '/')
-						push(ch2 / ch1);
+			
+				case '*':
+				case '/':
+				case '+':
+				case '-':
+					if (!isempty())
+					{
+						char ch1 = pop();
+						char ch2 = pop();
+						if (str[i] == '+')
+							push(ch2 + ch1);
+						if (str[i] == '-')
+							push(ch2 - ch1);
+						if (str[i] == '*')
+							push(ch2 * ch1);
+						if (str[i] == '/')
+							push(ch2 / ch1);
+
+					}
+					break;
 
 				}
-				break;
-
 			}
 		}
 		cout << pop();
