@@ -79,6 +79,7 @@ public:
 		else
 			cout << "empty list";
 	}
+	
 	void delete_spec(int ele)
 	{
 		struct node *temp, *cur;
