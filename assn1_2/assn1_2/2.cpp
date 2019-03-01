@@ -13,7 +13,8 @@ void main()
 	printf("converted binary value is", X);
 	RESULT = invert(X, P, N);
 	printf("in decimal form %d", RESULT);
-	//getch();
+	getchar();
+	
 }
 
 int invert(int X, int P, int N)
