@@ -3,39 +3,37 @@
 #include<ctype.h>
 #include<string.h>
 
-void expand(char *p)//function to expand short hand notation
-
+void ExpandShorthand(char *p)//function to expand short hand notation
 {
-
 	printf("string after expanding shorthand notation is\n");
 
-	int i = 0, k, l;
+	int iterator1 = 0, start_char, end_char;
 
-	while (*(p + i) != '\0')
+	while (*(p +iterator1) != '\0')
 
 	{
 
-		if (p[i] != '-')				//printing characters till'-'
+		if (p[iterator1] != '-')				//printing characters till'-'
 
-			printf("%c", p[i]);
+			printf("%c", p[iterator1]);
 
 		else
 
 		{
 
-			if (isalpha(*(p + (i - 1))))   //to check if an alphabet is given as input
+			if (isalpha(*(p + (iterator1 - 1))))   //to check if an alphabet is given as input
 
 			{
 
-				k = (int)(*(p + (i - 1)));		//asci values of alphabets is considered.
+				start_char = (int)(*(p + (iterator1 - 1)));		//asci values of alphabets is considered.
 
-				l = (int)(*(p + (i + 1)));
+				 end_char = (int)(*(p + (iterator1 + 1)));
 
-				k++;
+				start_char++;
 
-				while (k<l)						//loop for printing expanded shorthand notation.
+				while (start_char<end_char)						//loop for printing expanded shorthand notation.
 
-					printf("%c", k++);
+					printf("%c", start_char++);
 
 			}
 
@@ -43,21 +41,21 @@ void expand(char *p)//function to expand short hand notation
 
 			{
 
-				k = (*(p + (i - 1)));
+				start_char = (*(p + (iterator1 - 1)));
 
-				l = (*(p + (i + 1)));
+				 end_char= (*(p + (iterator1 + 1)));
 
-				k++;
+				start_char++;
 
-				while (k<l)				//loop for printing expanded shorthand notation.
+				while (start_char< end_char)				//loop for printing expanded shorthand notation.
 
-					printf("%c", k++);
+					printf("%c", start_char++);
 
 			}
 
 		}
 
-		i++;
+		iterator1++;
 
 	}
 
